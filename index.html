@@ -7,31 +7,117 @@
     // 👉 CHALLENGE 1
     function profileActivation(profile, reason) {
 
-    }
+   if (profile.active === true && !reason){
+    return "confirm status manually"
+   }
 
+    if (profile.active === true && reason) {
+      profile.active = false;
+      profile.reason = reason;
+   }
+
+    else if (profile.active === false && !reason){
+    profile.active = true;
+    delete profile.reason; 
+   }
+
+   return profile
+  }
+  
     // 👉 CHALLENGE 2
-    function mineSweeper(grid, x, y) {
-
+function mineSweeper(grid, x, y) {
+  
+    if (x < 1 || x > 3 || y < 1 || y > 3) {
+        return "invalid coordinates";
     }
+
+    x = x - 1;
+    y = y - 1;
+
+    let xYvalues = grid[y][x];
+
+    if (xYvalues === "🟥") {
+        return "🟥 💀"; 
+    } else if (xYvalues === "🟦") {
+        return "🟦 🥳"; 
+    }
+}
 
     // 👉 CHALLENGE 3
     function booleanize(obj) {
 
+      for (let prop in obj) {
+      // console.log(prop)
+      // console.log(obj[prop])
+        if (prop.length > 9){
+
+        return "shorten all prop names to 9 chars or less"
+        }
+
+        if (typeof obj[prop] === "number"){
+          // let newObj = obj[prop]
+
+          if (obj[prop] === 0){
+          obj[prop] = false;
+          }
+
+          if (obj[prop] === 1){
+          obj[prop] = true;
+          }
+        }
+        if (obj[prop] === null){
+          delete obj[prop];
+        }
+      }
+      return obj
     }
+
+
+
+
+
 
     // 👉 CHALLENGE 4
     function scrub(text, forbidden) {
+      let array1 = text.split(" ");
+      // let array2 = forbidden;
+    
 
+      for (let i = 0; i < array1.length; i++) {
+        // console.log(array1);
+        for (let j = 0; j < forbidden.length; j++) {
+
+        // console.log(array2);
+          if (array1[i] === forbidden[j]) {
+              array1[i] = "x".repeat(array1[i].length);
+          }
+        }
+      }
+      return array1.join(" ")
     }
 
+
+
+    
     // 👉 CHALLENGE 5 (bonus, NOT graded)
     function normalizePhoneNumber(num) {
+     
 
+      let areaCode = num.slice(0,3);
+      let threeNum = num.slice(3,6);
+      let fourNum = num.slice(6);
+
+      // console.log(areaCode);
+      // console.log(threeNum);
+      // console.log(fourNum);
+      const normalNumber = `(${areaCode}) ${threeNum}-${fourNum}`;
+       return normalNumber;
     }
+
 
     // 👉 CHALLENGE 6 (bonus, NOT graded)
     function diceRolls() {
-
+      
     }
 
     // 🧪 DO NOT make any changes below this line ===================

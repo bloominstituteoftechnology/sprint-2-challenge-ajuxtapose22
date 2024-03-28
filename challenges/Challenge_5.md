@@ -15,6 +15,7 @@ function normalizePhoneNumber(num)
 1. Format the input string `num` into the phone number format: "(XXX) XXX-XXXX".
 2. You can assume that all entries will be exactly 10 digits long.
 
+
 ### Examples
 
 #### Example 1

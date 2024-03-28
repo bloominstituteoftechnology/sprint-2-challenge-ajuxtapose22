@@ -41,6 +41,8 @@ let result = profileActivation(testProfile);
 console.log(result); 
 ```
 
+
+
 #### Expected Output
 ```
 { active: true }
@@ -77,6 +79,7 @@ console.log(result);
 ```
 "confirm status manually"
 ```
+
 
 
 ### Canvas References
