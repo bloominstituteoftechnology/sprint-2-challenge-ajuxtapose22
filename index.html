@@ -105,19 +105,39 @@ function mineSweeper(grid, x, y) {
 
       let areaCode = num.slice(0,3);
       let threeNum = num.slice(3,6);
-      let fourNum = num.slice(6);
+      let lastFour = num.slice(-4);
 
       // console.log(areaCode);
       // console.log(threeNum);
-      // console.log(fourNum);
-      const normalNumber = `(${areaCode}) ${threeNum}-${fourNum}`;
+      // console.log(lastFour);
+      const normalNumber = `(${areaCode}) ${threeNum}-${lastFour}`;
        return normalNumber;
     }
 
 
     // 👉 CHALLENGE 6 (bonus, NOT graded)
     function diceRolls() {
+      let min = 1;
+      let max = 6;
       
+      let yahtzeeCount = 0;
+      
+      while (yahtzeeCount < 3);
+      let random = Math.floor(Math.random() * (max - min + 1)) + min;
+    
+     
+      
+      if (random === 6){
+        yahtzeeCount++;
+        // console.log("rolled a 6");
+
+        if (yahtzeeCount === 3) {
+          console.log(yahtzee);
+        }
+      }
+        else if (random !== 6) {
+         yahtzeeCount = 0;
+      }
     }
 
     // 🧪 DO NOT make any changes below this line ===================
